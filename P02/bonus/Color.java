@@ -14,13 +14,13 @@ enum Color{
 	public String toString(){
 		switch(this){
 			case RED:
-				return "RED (#" + Integer.toHexString(rgb) + ")";
+				return "RED (#" + (Integer.toHexString(rgb)).toUpperCase() + ")";
 			case GREEN:
-				return "GREEN (#" + Integer.toHexString(rgb) + ")";
+				return "GREEN (#" + (Integer.toHexString(rgb)).toUpperCase() + ")";
 			case BLUE: 
-				return "BLUE (#" + Integer.toHexString(rgb) + ")";
+				return "BLUE (#" + (Integer.toHexString(rgb)).toUpperCase() + ")";
 			case YELLOW:
-				return "YELLOW (#" + Integer.toHexString(rgb) + ")";
+				return "YELLOW (#" + (Integer.toHexString(rgb)).toUpperCase() + ")";
 			default:
 				return "ERROR: Incorrect color inserted";
 		}
