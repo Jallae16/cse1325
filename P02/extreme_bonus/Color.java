@@ -10,7 +10,7 @@ enum Color{
 	private final String ANSI_RED = "\u001B[31m";
 	private final String ANSI_GREEN = "\u001B[32m";
 	private final String ANSI_BLUE = "\u001B[34m";
-	private final String ANSI_YELLOW = "\u001B[93m";
+	private final String ANSI_BRIGHT_YELLOW = "\u001B[93m";
 
 	
 	private Color(int RGB){
@@ -34,7 +34,7 @@ enum Color{
 				ANSI_NORMAL_COLOR + ")";
 			case YELLOW:
 				return "YELLOW (" + 
-				ANSI_YELLOW + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
+				ANSI_BRIGHT_YELLOW + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
 				ANSI_NORMAL_COLOR + ")";
 			default:
 				return "ERROR: Incorrect color inserted";
