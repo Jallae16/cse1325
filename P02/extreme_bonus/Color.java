@@ -4,23 +4,38 @@ enum Color{
 	BLUE(255),
 	YELLOW(16776960);
 	
-	private final int rgb;
+	private final int RGB;
 	
-	private Color(int rgb){
-		this.rgb = rgb;
+	private final String ANSI_NORMAL_COLOR = "\u001B[0m";
+	private final String ANSI_RED = "\u001B[31m";
+	private final String ANSI_GREEN = "\u001B[32m";
+	private final String ANSI_BLUE = "\u001B[34m";
+	private final String ANSI_YELLOW = "\u001B[93m";
+
+	
+	private Color(int RGB){
+		this.RGB = RGB;
 	}
 	
 	@Override
 	public String toString(){
 		switch(this){
 			case RED:
-				return "RED (#" + (Integer.toHexString(rgb)).toUpperCase() + ")";
+				return "RED (" + 
+				ANSI_RED + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
+				ANSI_NORMAL_COLOR + ")";
 			case GREEN:
-				return "GREEN (#" + (Integer.toHexString(rgb)).toUpperCase() + ")";
+				return"GREEN (" + 
+				ANSI_GREEN + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
+				ANSI_NORMAL_COLOR + ")";
 			case BLUE: 
-				return "BLUE (#" + (Integer.toHexString(rgb)).toUpperCase() + ")";
+				return "BLUE (" + 
+				ANSI_BLUE + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
+				ANSI_NORMAL_COLOR + ")";
 			case YELLOW:
-				return "YELLOW (#" + (Integer.toHexString(rgb)).toUpperCase() + ")";
+				return "YELLOW (" + 
+				ANSI_YELLOW + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
+				ANSI_NORMAL_COLOR + ")";
 			default:
 				return "ERROR: Incorrect color inserted";
 		}
