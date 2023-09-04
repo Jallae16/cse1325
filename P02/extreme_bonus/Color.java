@@ -22,19 +22,19 @@ enum Color{
 		switch(this){
 			case RED:
 				return "RED (" + 
-				ANSI_RED + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
+				ANSI_RED + "0x" + (Integer.toHexString(RGB)).toUpperCase() + 
 				ANSI_NORMAL_COLOR + ")";
 			case GREEN:
 				return"GREEN (" + 
-				ANSI_GREEN + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
+				ANSI_GREEN + "0x" + (Integer.toHexString(RGB)).toUpperCase() + 
 				ANSI_NORMAL_COLOR + ")";
 			case BLUE: 
 				return "BLUE (" + 
-				ANSI_BLUE + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
+				ANSI_BLUE + "0x" + (Integer.toHexString(RGB)).toUpperCase() + 
 				ANSI_NORMAL_COLOR + ")";
 			case YELLOW:
 				return "YELLOW (" + 
-				ANSI_BRIGHT_YELLOW + "#" + (Integer.toHexString(RGB)).toUpperCase() + 
+				ANSI_BRIGHT_YELLOW + "0x" + (Integer.toHexString(RGB)).toUpperCase() + 
 				ANSI_NORMAL_COLOR + ")";
 			default:
 				return "ERROR: Incorrect color inserted";
