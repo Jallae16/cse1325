@@ -1,4 +1,4 @@
-java.time.LocalDate;
+import java.time.LocalDate;
 
 public class Publication{
    private String title;
@@ -11,5 +11,18 @@ public class Publication{
       this.title = title;
       this.author = author;
       this.copyright = copyright;
+   }
+   
+   public void checkOut(String patron){
+      
+   }
+   
+   public void checkIn(){
+      
+   }
+   
+   @Override
+   public String toString(){
+      
    }
 }
