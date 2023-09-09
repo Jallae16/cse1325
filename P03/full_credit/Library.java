@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Library{
 	private String name;
-	private ArrayList <Publication> publications = new ArrayList <Publication>();
+	private ArrayList <Publication> publications;
 	
 	public Library(String name){
 	   this.name = name;
