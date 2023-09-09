@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.Calendar;
 
 public class Publication{
    private String title;
@@ -8,7 +10,7 @@ public class Publication{
    private LocalDate dueDate;
    
    public Publication(String title, String author, int copyright){
-      if(copyright < 1900 || copyright > dueDate.getYear()){
+      if(copyright < 1900 || copyright > Calendar.getInstance().get(Calendar.YEAR)){
          throw new IllegalArgumentException("Invalid Copyright date");
       }
       
