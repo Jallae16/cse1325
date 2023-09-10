@@ -19,14 +19,16 @@ public class LibraryManager{
 		 int bookNum = scanner.nextInt();
 		 
 		 Patron pat1 = new Patron("Allie", "allie23@gmail.com");
+		 Patron pat2 = new Patron("Alex", "alexC1@gmail.com");
 		 lib.addPatron(pat1);
+		 lib.addPatron(pat2);
 		 System.out.println(lib.patronMenu());
 		 
 		 String buffer = scanner.nextLine();
 		 System.out.println("\nWhich one are you: ");
 		 int patron = scanner.nextInt();
 		 
-		 lib.checkOut(bookNum, pat1);
+		 lib.checkOut(bookNum, patron);
 		 
 		 System.out.println(lib.toString());
 	}

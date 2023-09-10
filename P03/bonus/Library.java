@@ -17,8 +17,8 @@ public class Library{
 	   patrons.add(patron);
 	}
 	
-	public void checkOut(int publicationIndex, Patron patron){
-	   publications.get(publicationIndex).checkOut(patron);
+	public void checkOut(int publicationIndex, int patronIndex){
+	   publications.get(publicationIndex).checkOut(patrons.get(patronIndex));
 	}
 	
 	public String patronMenu(){
