@@ -19,8 +19,8 @@ public class Library{
 	public String toString(){
 	   StringBuilder lib_toString = new StringBuilder();
 	   lib_toString.append("\n").append(name).append("\n");
-	   for(int i = 0; i < publications.size(); i++){
-	      lib_toString.append("\n").append(i).append(") ").append(publications.get(i));
+	   for(Publication p : publications){
+	      lib_toString.append("\n").append(p).append(") ").append(publications.get(p));
 	   }
 	   
 	   return lib_toString.toString();
