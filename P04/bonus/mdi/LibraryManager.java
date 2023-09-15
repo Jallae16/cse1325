@@ -1,4 +1,7 @@
 package mdi;
+import library.Library;
+import library.Patron;
+import library.Publication;
 import java.util.Scanner;
 
 public class LibraryManager{
