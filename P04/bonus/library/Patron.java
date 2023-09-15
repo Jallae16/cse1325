@@ -1,3 +1,5 @@
+package library;
+
 /**
   * Has name and email of Library Patron
   *

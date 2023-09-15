@@ -1,3 +1,4 @@
+package mdi;
 import java.util.Scanner;
 
 public class LibraryManager{
