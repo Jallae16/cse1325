@@ -1,3 +1,3 @@
-public class Video extends Publication{
+//public class Video extends Publication{
    //private Duration 
-}
+//}
