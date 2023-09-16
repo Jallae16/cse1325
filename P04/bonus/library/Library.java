@@ -1,26 +1,73 @@
 package library;
 import java.util.ArrayList;
 
+/**
+  * A library that contains publications
+  *
+  * @author   Jacob Mathew
+  * @version  1.0
+  * @since    1.0
+  *
+  */
+
+
 public class Library{
 	private String name;
 	private ArrayList <Publication> publications = new ArrayList<Publication>();
 	private ArrayList <Patron> patrons = new ArrayList<Patron>();
 	
+	/**
+	  * Constructs a library
+	  *
+	  * @param name  name of library
+	  * @since 1.0
+	  */
+	
 	public Library(String name){
 	   this.name = name;
 	}
+	
+	/**
+	  * Adds publication to an ArrayList
+	  *
+	  * @param publication   the publication to be added
+	  * @since 1.0
+	  */ 
 	
 	public void addPublication(Publication publication){
 	   publications.add(publication);
 	}
 	
+	/**
+	  * Adds patron to an ArrayList
+	  *
+	  * @param publication   the patron to be added
+	  * @since 1.0
+	  */ 
+	
 	public void addPatron(Patron patron){
 	   patrons.add(patron);
 	}
 	
+	/**
+	  * Checks out publication for a patron
+	  *
+	  * @param publicationIndex    the location of the publication in ArrayList
+	  * @param patronIndex         the location of the patron in ArrayList
+	  * @since 1.0
+	  * 
+	  */
+	
 	public void checkOut(int publicationIndex, int patronIndex){
 	   publications.get(publicationIndex).checkOut(patrons.get(patronIndex));
 	}
+	
+	/**
+	  * Creates a menu of patrons of the library
+	  *
+	  * @return returns the menu of patrons
+	  * @since 1.0
+	  */
 	
 	public String patronMenu(){
 	   StringBuilder patMenu = new StringBuilder();
@@ -32,6 +79,15 @@ public class Library{
 	   
 	   return patMenu.toString();
 	}
+	
+	/**
+	  *
+	  * Returns all the publications in the library
+	  *
+	  * @return    String of all publications
+	  * @since     1.0
+	  *
+	  */
 	
 	@Override
 	public String toString(){

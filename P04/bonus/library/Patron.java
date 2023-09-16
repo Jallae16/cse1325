@@ -1,7 +1,7 @@
 package library;
 
 /**
-  * Has name and email of Library Patron
+  * Has data of a patron of the library
   *
   * @author   Jacob Mathew
   * @version  1.0
@@ -19,6 +19,7 @@ public class Patron{
 	  * @param name    The name of the patron
 	  * @param email   The email of the patron
 	  * @since         1.0
+	  *
 	  */
 	
 	public Patron(String name, String email){
