@@ -13,7 +13,7 @@ public class LibraryManager{
 		 Publication book2 = new Publication("1984", "George Orwell", 1949);
 		 Publication book3 = new Publication("The Formation of Poltiical Parties and the First National Elections in Russia", "Terence Emmons", 1983);
 		 
-		 Video vid1 = new Video("The search for the saddest puint in the world | Chart Party", "Jon Bois", 2019, 54);
+		 Video vid1 = new Video("The search for the saddest punt in the world | Chart Party", "Jon Bois", 2019, 54);
 		 Video vid2 = new Video("Deus Ex: Human Revolution is FINE, And Here's Why", "Harry Brewis", 2022, 213);
 		 Video vid3 = new Video("Fear of Cold", "Jacob Geller", 2022, 47);
 		 
