@@ -26,7 +26,7 @@ public class Video extends Publication{
 	  
    public Video(String title, String author, int copyright, int runtime){
       super(title, author, copyright);
-      if(runtime >= 0)
+      if(runtime <= 0)
       	throw new InvalidRuntimeException(title, runtime);
       this.runtime = Duration.ofMinutes(runtime);
    }  
@@ -41,8 +41,8 @@ public class Video extends Publication{
    @Override
    public String toString(){
       StringBuilder vid_toString = new StringBuilder();
-      vid_toString.append("Video: " + super.toString());
-      vid_toString.append(", with a runtime of " + runtime.toMinutes() + " minutes");
+      vid_toString.append("Video: " + "with a runtime of " + runtime.toMinutes() + " mintues, ");
+      vid_toString.append(super.toString());
       
       return vid_toString.toString();
       
