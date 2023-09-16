@@ -36,8 +36,12 @@ public class Library{
 	@Override
 	public String toString(){
 	   StringBuilder lib_toString = new StringBuilder();
+	   
 	   lib_toString.append("\n").append(name).append("\n");
-	   for(int i = 0; i < publications.size(); i++){
+	   for(int i = 0; i < publications.size()/2; i++){
+	      lib_toString.append("\n").append(i).append(") Book: ").append(publications.get(i));
+	   }
+	   for(int i = publications.size()/2; i < publications.size(); i++){
 	      lib_toString.append("\n").append(i).append(")").append(publications.get(i));
 	   }
 	   

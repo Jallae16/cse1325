@@ -40,7 +40,7 @@ public class Publication{
       pub_toString.append(title).append(", with its copyright active since ");
       pub_toString.append(copyright);
       if(loanedTo != null)
-         pub_toString.append("\n>>>>loaned to the incredible, beautiful, and The GOAT, ").append(loanedTo).append(", until they must concede the book back to the library on ").append(dueDate);
+         pub_toString.append("\n>>>>loaned to the incredible, beautiful, and The GOAT, ").append(loanedTo).append(", until they must concede the item back to the library on ").append(dueDate);
       return pub_toString.toString();
    }
 }
