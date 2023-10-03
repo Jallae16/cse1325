@@ -52,6 +52,10 @@ public class Publication{
       dueDate = LocalDate.now().plusDays(14);
    }
    
+   public void checkIn(){
+      loanedTo = null;
+   }
+   
    /**
 	  *
 	  * Returns information about the publication

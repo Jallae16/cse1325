@@ -8,7 +8,9 @@ import java.io.File;
 import java.nio.file.Files;
 
 public class LibraryManager{
-
+	
+		
+	
 	public LibraryManager(){
 		//lib = new Library("Meowsier-Kitty Public Library");
 	}
@@ -36,19 +38,29 @@ public class LibraryManager{
 	}
 	
 	public static void checkOutPublication(Library lib){
+		Scanner scanner = new Scanner(System.in);
+			 
+		int bookNum = Integer.parseInt(System.console().readLine("\nWhat item would you like to checkout: "));
+		int patronInd = Integer.parseInt(System.console().readLine("\nWhich patron are you: "));
+		
+		lib.checkOut(bookNum, patronInd);
 		
 	}
 	
 	public static void checkInPublication(Library lib){
-		
+		int remBook = Integer.parseInt(System.console().readLine("\nWhat item would you like to checkIn: "));
+		lib.checkIn(remBook);
 	}
 	
 	public static void listPatrons(Library lib){
-		
+		System.out.println(lib.patronMenu());
 	}
 	
 	public static void addPatron(Library lib){
-		
+		Patron pat1 = new Patron("Allie", "allie23@gmail.com");
+		Patron pat2 = new Patron("Alex", "alexC1@gmail.com");
+		lib.addPatron(pat1);
+		lib.addPatron(pat2);
 	}
 	
 	public static void main(String[] args){
