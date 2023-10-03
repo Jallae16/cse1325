@@ -62,6 +62,10 @@ public class Library{
 	   publications.get(publicationIndex).checkOut(patrons.get(patronIndex));
 	}
 	
+	public int checkInPublication(int publicationIndex){
+		return 0;
+	}
+	
 	/**
 	  * Creates a menu of patrons of the library
 	  *
