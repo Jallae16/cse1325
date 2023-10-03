@@ -51,7 +51,11 @@ public class Publication{
       loanedTo = patron;
       dueDate = LocalDate.now().plusDays(14);
    }
-   
+   /**
+     * Sets loanedTo to NULL
+     *
+     * @since 1.0
+     */
    public void checkIn(){
       loanedTo = null;
    }

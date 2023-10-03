@@ -62,6 +62,15 @@ public class Library{
 	   publications.get(publicationIndex).checkOut(patrons.get(patronIndex));
 	}
 	
+	/**
+	  * Checks in publication for a patron
+	  *
+	  * @param publicationIndex    the location of the publication in ArrayList
+	  * @since 1.0
+	  * 
+	  */
+	
+	
 	public void checkIn(int publicationIndex){
 		publications.get(publicationIndex).checkIn();
 	}
