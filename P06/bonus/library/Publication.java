@@ -2,6 +2,9 @@ package library;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Calendar;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
   * An item in the library that can be checked out
@@ -68,6 +71,14 @@ public class Publication{
 	  * @since     1.0
 	  *
 	  */
+     
+   public Publication(BufferedReader br){
+      
+   }  
+   
+   public void save(BufferedWriter bw){
+      
+   }
    
    @Override
    public String toString(){

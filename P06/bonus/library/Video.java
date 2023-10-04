@@ -1,5 +1,8 @@
 package library;
 import java.time.Duration;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
   * A video that can be checked out
