@@ -67,18 +67,28 @@ public class LibraryManager {
         library.addPatron(new Patron(name, email));
     }
     public void openLibrary(){
-    	
+    	Library openingLibrary = null;
+    	String fileName = console.readLine("File: "); 
+    	if(fileName.isEmpty())
+    		return;
+    	try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
+    		openingLibrary = new Library(br);
+    	}
+    	catch(Exception e){
+    		System.err.println("Failed to read: " + e);
+    	}
+    	System.out.println(openingLibrary);
     }	
     public void saveLibrary(){
-    	/*String fileName = console.readLine("File: "); 
+    	String fileName = console.readLine("File: "); 
     	if(fileName.isEmpty())
     		return;
     	try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))){
     		library.save(bw);
     	}
     	catch(Exception e){
-    		System.err.println("Failed to read: " + e);
-    	}*/
+    		System.err.println("Failed to write: " + e);
+    	}
     }
 
     public static void main(String[] args) {

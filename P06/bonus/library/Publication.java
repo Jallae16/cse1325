@@ -106,7 +106,7 @@ public class Publication{
    @Override
    public String toString(){
       StringBuilder pub_toString = new StringBuilder();
-      pub_toString.append("The Great ").append(author).append(" wrote ");
+      pub_toString.append("The Great Great ").append(author).append(" wrote ");
       pub_toString.append(title).append(", with its copyright active since ");
       pub_toString.append(copyright);
       if(loanedTo != null)

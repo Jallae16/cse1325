@@ -31,12 +31,12 @@ public class Patron{
 	   this.email = email;
 	}
 	
-	public Patron(BufferedReader br){
+	public Patron(BufferedReader br) throws IOException{
 	   this.name = br.readLine();
 	   this.email = br.readLine();
 	}
 	
-	public void save(BufferedWriter bw){
+	public void save(BufferedWriter bw) throws IOException{
 	   bw.write("" + name + '\n');
 	   bw.write("" + email + '\n');
 	}

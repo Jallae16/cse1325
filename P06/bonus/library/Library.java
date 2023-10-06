@@ -31,27 +31,28 @@ public class Library{
 	   this.name = name;
 	}
 	
-	public Library(BufferedReader br){
+	public Library(BufferedReader br) throws IOException{
 	   this.name = br.readLine();
-	   /*ArrayList <Publication> pub = new ArrayList<Publication>();
-	   int size = publications.size();
-	   for(int i = 0; i<size; i++){
-	   	  
-	      pub.add(br.readLine());  
-	   }*/
+	   ArrayList <Publication> pub = new ArrayList<Publication>();
+	   ArrayList <Patron> pat = new ArrayList<Patron>();
+	   int size = 0;
+	   while(br.readLine().substring(0,15) == "The Great Great "){
+	      pub.add((Publication)br.readLine());
+	   }
+	   
 	   
 	}
 	
-	public void save(BufferWriter bw){
+	public void save(BufferedWriter bw) throws IOException{
 	   bw.write("" + name + '\n');
 	   for(Publication p : publications){
 	      if(p instanceof Video)
-	      	p.save(bw);
+	      	bw.write("" + p + '\n');
 	      else if(p instanceof Publication)
-	      	p.save(bw);
+	      	bw.write("" + p + '\n');
 	   }
 	   for(Patron pa : patrons){
-	      pa.save(bw);
+	      bw.write("" + pa + '\n');;
 	   }
 	}
 	

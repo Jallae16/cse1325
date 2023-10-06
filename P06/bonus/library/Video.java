@@ -35,14 +35,14 @@ public class Video extends Publication{
       this.runtime = Duration.ofMinutes(runtime);
    }
    
-   public Video(BufferedReader br){
+   public Video(BufferedReader br) throws IOException{
       super(br);
       this.runtime = Duration.parse(br.readLine());
    }
    
-   public void save(BufferedWriter bw){
+   public void save(BufferedWriter bw) throws IOException{
       super.save(bw);
-      bw.write("" + Duration.ofMinutes(runtime) + '\n');
+      bw.write("" + runtime + '\n');
    }
    
    /**
