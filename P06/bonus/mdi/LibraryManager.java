@@ -11,10 +11,20 @@ import library.Video;
 import library.Patron;
 import java.io.Console;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class LibraryManager {
+
+    private Library library;
+    private static Console console = System.console();
+    private static final String name = "Meow-Meeeeow Purrr (Kitty Library)";
+    private static final String menu = "\n\n=========\nMain Menu\n=========\n\n" + name + "\n\n"
+        + "Publications\n1) List\n2) Add\n3) Check out\n4) Check in\n\n"
+        + "Patrons\n5) List \n6) Add\n\n"
+        + "Files\n0) Exit\n7) Open\n8) Save\n\n";
+    
     public LibraryManager(Library library) {
         this.library = library;
     }
@@ -55,6 +65,12 @@ public class LibraryManager {
         String email = console.readLine("Email: "); if(email.isEmpty()) return;
         library.addPatron(new Patron(name, email));
     }
+    public void openLibrary(){
+    	
+    }	
+    public void saveLibrary(){
+    	
+    }
 
     public static void main(String[] args) {
         LibraryManager lm = new LibraryManager(new Library(name));
@@ -72,6 +88,8 @@ public class LibraryManager {
                     case  4 -> lm.checkInPublication();
                     case  5 -> lm.listPatrons();
                     case  6 -> lm.addPatron();
+                    case  7 -> lm.openLibrary();
+                    case 8  -> lm.saveLibrary();
                     default -> throw new RuntimeException("Invalid: " + selection);
                 }
             } catch (Exception e) {
@@ -80,14 +98,7 @@ public class LibraryManager {
         }
     }
 
-    private static Console console = System.console();
-    private static final String name = "Meow-Meeeeow Purrr (Kitty Library)";
-    private static final String menu = "\n\n=========\nMain Menu\n=========\n\n" + name + "\n\n"
-        + "Publications\n1) List\n2) Add\n3) Check out\n4) Check in\n\n"
-        + "Patrons\n5) List \n6) Add\n\n"
-        + "Files\n0) Exit\n\n";
 
-    private Library library;
     
     public void testData() {
         library.addPublication(new Publication("The Cat in the Hat", "Dr. Suess", 1957));

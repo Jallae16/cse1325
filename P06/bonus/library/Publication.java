@@ -3,6 +3,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Calendar;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -72,12 +73,19 @@ public class Publication{
 	  *
 	  */
      
-   public Publication(BufferedReader br){
+   public Publication(BufferedReader br) throws IOException{
+      if(copyright < 1900 || copyright > Calendar.getInstance().get(Calendar.YEAR)){
+         throw new IllegalArgumentException("Invalid Copyright date");
+      }
       
-   }  
-   
-   public void save(BufferedWriter bw){
-      
+      this.title = br.readLine();
+      this.author = br.readLine();
+      this.copyright = Integer.parseInt(br.readLine());
+   }   
+   public void save(BufferedWriter bw) throws IOException{
+      bw.write("" + title + '\n');
+      bw.write("" + author + '\n');
+      bw.write("" + copyright + '\n');
    }
    
    @Override
