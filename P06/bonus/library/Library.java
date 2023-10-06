@@ -32,15 +32,8 @@ public class Library{
 	}
 	
 	public Library(BufferedReader br) throws IOException{
-	   this.name = br.readLine();
-	   ArrayList <Publication> pub = new ArrayList<Publication>();
-	   ArrayList <Patron> pat = new ArrayList<Patron>();
+	   this.name = br.readLine();	   
 	   int size = 0;
-	   while(br.readLine().substring(0,15) == "The Great Great "){
-	      pub.add((Publication)br.readLine());
-	   }
-	   
-	   
 	}
 	
 	public void save(BufferedWriter bw) throws IOException{
