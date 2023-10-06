@@ -13,6 +13,7 @@ import java.io.Console;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class LibraryManager {
@@ -69,7 +70,15 @@ public class LibraryManager {
     	
     }	
     public void saveLibrary(){
-    	
+    	/*String fileName = console.readLine("File: "); 
+    	if(fileName.isEmpty())
+    		return;
+    	try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))){
+    		library.save(bw);
+    	}
+    	catch(Exception e){
+    		System.err.println("Failed to read: " + e);
+    	}*/
     }
 
     public static void main(String[] args) {
@@ -89,7 +98,7 @@ public class LibraryManager {
                     case  5 -> lm.listPatrons();
                     case  6 -> lm.addPatron();
                     case  7 -> lm.openLibrary();
-                    case 8  -> lm.saveLibrary();
+                    case  8 -> lm.saveLibrary();
                     default -> throw new RuntimeException("Invalid: " + selection);
                 }
             } catch (Exception e) {

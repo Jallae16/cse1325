@@ -81,11 +81,26 @@ public class Publication{
       this.title = br.readLine();
       this.author = br.readLine();
       this.copyright = Integer.parseInt(br.readLine());
+      if(br.readLine().equals("checked in")){
+         dueDate = null;
+         loanedTo = null;
+      }
+      //this.loanedTo = br.readLine();
+      this.dueDate = LocalDate.parse(br.readLine());
    }   
    public void save(BufferedWriter bw) throws IOException{
-      bw.write("" + title + '\n');
-      bw.write("" + author + '\n');
+      bw.write(title + '\n');
+      bw.write(author + '\n');
       bw.write("" + copyright + '\n');
+      if(loanedTo == null){ 
+      	bw.write("checked in" + '\n');
+      	loanedTo.save(bw);
+      }
+      else if(loanedTo != null){
+      	bw.write("checked out" + '\n');
+      	loanedTo.save(bw);
+      }
+      bw.write("" + LocalDate.now().plusDays(14) + '\n');
    }
    
    @Override

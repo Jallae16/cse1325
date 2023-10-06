@@ -33,7 +33,18 @@ public class Video extends Publication{
       if(runtime <= 0)
       	throw new InvalidRuntimeException(title, runtime);
       this.runtime = Duration.ofMinutes(runtime);
-   }  
+   }
+   
+   public Video(BufferedReader br){
+      super(br);
+      this.runtime = Duration.parse(br.readLine());
+   }
+   
+   public void save(BufferedWriter bw){
+      super.save(bw);
+      bw.write("" + Duration.ofMinutes(runtime) + '\n');
+   }
+   
    /**
 	  *
 	  * Returns information about the video

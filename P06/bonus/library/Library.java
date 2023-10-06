@@ -31,6 +31,30 @@ public class Library{
 	   this.name = name;
 	}
 	
+	public Library(BufferedReader br){
+	   this.name = br.readLine();
+	   /*ArrayList <Publication> pub = new ArrayList<Publication>();
+	   int size = publications.size();
+	   for(int i = 0; i<size; i++){
+	   	  
+	      pub.add(br.readLine());  
+	   }*/
+	   
+	}
+	
+	public void save(BufferWriter bw){
+	   bw.write("" + name + '\n');
+	   for(Publication p : publications){
+	      if(p instanceof Video)
+	      	p.save(bw);
+	      else if(p instanceof Publication)
+	      	p.save(bw);
+	   }
+	   for(Patron pa : patrons){
+	      pa.save(bw);
+	   }
+	}
+	
 	/**
 	  * Adds publication to an ArrayList
 	  *

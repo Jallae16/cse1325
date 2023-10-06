@@ -30,6 +30,17 @@ public class Patron{
 	   this.name = name;
 	   this.email = email;
 	}
+	
+	public Patron(BufferedReader br){
+	   this.name = br.readLine();
+	   this.email = br.readLine();
+	}
+	
+	public void save(BufferedWriter bw){
+	   bw.write("" + name + '\n');
+	   bw.write("" + email + '\n');
+	}
+	
 	/**
 	  *
 	  * Returns the name and email in the form of name (email).
