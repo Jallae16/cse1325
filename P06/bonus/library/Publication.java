@@ -74,33 +74,36 @@ public class Publication{
 	  */
      
    public Publication(BufferedReader br) throws IOException{
-      if(copyright < 1900 || copyright > Calendar.getInstance().get(Calendar.YEAR)){
-         throw new IllegalArgumentException("Invalid Copyright date");
-      }
-      
       this.title = br.readLine();
       this.author = br.readLine();
       this.copyright = Integer.parseInt(br.readLine());
       if(br.readLine().equals("checked in")){
-         dueDate = null;
-         loanedTo = null;
+         this.dueDate = null;
+         this.loanedTo = null;
       }
-      //this.loanedTo = br.readLine();
-      this.dueDate = LocalDate.parse(br.readLine());
+      else if(br.readLine().equals("checked out")){
+         //this.loanedTo = br.readLine();
+         this.dueDate = LocalDate.parse(br.readLine());
+      }
    }   
    public void save(BufferedWriter bw) throws IOException{
+      
       bw.write(title + '\n');
       bw.write(author + '\n');
       bw.write("" + copyright + '\n');
       if(loanedTo == null){ 
       	bw.write("checked in" + '\n');
-      	loanedTo.save(bw);
       }
       else if(loanedTo != null){
       	bw.write("checked out" + '\n');
-      	loanedTo.save(bw);
+      	bw.write("" + loanedTo + '\n');
+      	bw.write("" + dueDate + '\n');
       }
-      bw.write("" + LocalDate.now().plusDays(14) + '\n');
+   }
+   public String importantInfo(){
+      if(loanedTo != null)
+         return "checked out\n" + dueDate + "\n" + title + "\n" + author + "\n" + copyright + "\n";
+      return title + "\n" + author + "\n" + copyright + "\n";
    }
    
    @Override

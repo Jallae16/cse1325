@@ -72,12 +72,12 @@ public class LibraryManager {
     	if(fileName.isEmpty())
     		return;
     	try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
-    		openingLibrary = new Library(br);
+    		library = new Library(br);
     	}
     	catch(Exception e){
     		System.err.println("Failed to read: " + e);
     	}
-    	System.out.println(openingLibrary);
+    	System.out.println(library);
     }	
     public void saveLibrary(){
     	String fileName = console.readLine("File: "); 

@@ -1,16 +1,50 @@
 Meow-Meeeeow Purrr (Kitty Library)
-The Great Dr. Suess wrote The Cat in the Hat, with its copyright active since 1957
-The Great John Grisham wrote The Firm, with its copyright active since 1992
-The Great Isaac Asimov wrote Foundation, with its copyright active since 1951
-Video: with a runtime of 119 mintues, The Great Orson Welles wrote Citizen Kane, with its copyright active since 1941
-Video: with a runtime of 121 mintues, The Great George Lucas wrote Star Wars, with its copyright active since 1977
-Video: with a runtime of 207 mintues, The Great Akira Kurosawa wrote 七人の侍 (Seven Samurai), with its copyright active since 1954
-Prof Rice (george.rice@uta.edu)
+6
+The Cat in the Hat
+Dr. Suess
+1957
+checked out
 Joan of Arc (heroine@france.gov)
-Wolfgang Amadeus Mozart (mozart@greatmusic.com)
-Charles Darwin (charlie@beagle.ship)
-Albert Einstein (albert@backtothefuture.movie)
-Mahatma Gandhi (gandhi@peace.org)
-William Shakespeare (thebard@english.lit)
-President Abraham Lincoln (united@stand.we)
-Niel Armstrong (first@lunar.moon)
+2023-10-20
+The Firm
+John Grisham
+1992
+checked in
+Foundation
+Isaac Asimov
+1951
+checked in
+Citizen Kane
+Orson Welles
+1941
+checked in
+119
+Star Wars
+George Lucas
+1977
+checked in
+121
+七人の侍 (Seven Samurai)
+Akira Kurosawa
+1954
+checked in
+207
+9
+Prof Rice
+george.rice@uta.edu
+Joan of Arc
+heroine@france.gov
+Wolfgang Amadeus Mozart
+mozart@greatmusic.com
+Charles Darwin
+charlie@beagle.ship
+Albert Einstein
+albert@backtothefuture.movie
+Mahatma Gandhi
+gandhi@peace.org
+William Shakespeare
+thebard@english.lit
+President Abraham Lincoln
+united@stand.we
+Niel Armstrong
+first@lunar.moon

@@ -33,19 +33,39 @@ public class Library{
 	
 	public Library(BufferedReader br) throws IOException{
 	   this.name = br.readLine();	   
-	   int size = 0;
+	   int pubSize = Integer.parseInt(br.readLine());
+	   while(pubSize-- > 0){
+	      if(br.readLine() == "runtime")
+	         this.publications.add(new Video(br));
+	      else
+	      	this.publications.add(new Publication(br));
+	   }
+	   int patSize = Integer.parseInt(br.readLine());
+	   while(patSize-- > 0){
+	      this.patrons.add(new Patron(br));
+	   }
+	   
 	}
 	
 	public void save(BufferedWriter bw) throws IOException{
+	   int pubSize = publications.size();
+	   int patSize = patrons.size();
 	   bw.write("" + name + '\n');
-	   for(Publication p : publications){
-	      if(p instanceof Video)
-	      	bw.write("" + p + '\n');
-	      else if(p instanceof Publication)
-	      	bw.write("" + p + '\n');
+	   bw.write("" + pubSize + '\n');
+	   /*for(int i = 0; i < pubSize; i++){
+	      bw.write(publications.get(i).importantInfo());
 	   }
+	   bw.write("" + patSize + '\n');
+	   for(int i = 0; i < patSize; i++){
+	      bw.write(patrons.get(i).importantInfo());
+	   }*/
+	   
+	   for(Publication p : publications){
+	      p.save(bw);
+	   }
+	   bw.write("" + patSize + '\n');
 	   for(Patron pa : patrons){
-	      bw.write("" + pa + '\n');;
+	      pa.save(bw);
 	   }
 	}
 	
@@ -127,7 +147,6 @@ public class Library{
 	@Override
 	public String toString(){
 	   StringBuilder lib_toString = new StringBuilder();
-	   
 	   lib_toString.append("\n").append(name).append("\n");
 	   for(int i = 0; i < publications.size()/2; i++){
 	      lib_toString.append("\n").append(i).append(") Book: ").append(publications.get(i));

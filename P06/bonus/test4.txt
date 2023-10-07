@@ -16,16 +16,19 @@ Citizen Kane
 Orson Welles
 1941
 checked in
+runtime
 119
 Star Wars
 George Lucas
 1977
 checked in
+runtime
 121
 七人の侍 (Seven Samurai)
 Akira Kurosawa
 1954
 checked in
+runtime
 207
 9
 Prof Rice

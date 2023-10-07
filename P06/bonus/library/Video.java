@@ -42,7 +42,13 @@ public class Video extends Publication{
    
    public void save(BufferedWriter bw) throws IOException{
       super.save(bw);
-      bw.write("" + runtime + '\n');
+      bw.write("runtime" + '\n');
+      bw.write("" + runtime.toMinutes() + '\n');
+   }
+   
+   @Override
+   public String importantInfo(){
+      return "" + runtime.toMinutes() + "\n" + super.importantInfo();
    }
    
    /**
