@@ -1,5 +1,5 @@
 Meow-Meeeeow Purrr (Kitty Library)
-3
+6
 publication
 The Cat in the Hat
 Dr. Suess
@@ -15,6 +15,27 @@ Foundation
 Isaac Asimov
 1951
 checked in
+video
+publication
+Citizen Kane
+Orson Welles
+1941
+checked in
+119
+video
+publication
+Star Wars
+George Lucas
+1977
+checked in
+121
+video
+publication
+七人の侍 (Seven Samurai)
+Akira Kurosawa
+1954
+checked in
+207
 9
 Prof Rice
 george.rice@uta.edu

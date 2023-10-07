@@ -74,7 +74,11 @@ public class Publication{
 	  */
      
    public Publication(BufferedReader br) throws IOException{
-      this.title = br.readLine();
+      String buffer = br.readLine();
+      if(buffer.equals("publication"))
+         this.title = br.readLine();
+      else
+         this.title = buffer;
       this.author = br.readLine();
       this.copyright = Integer.parseInt(br.readLine());
       String line = br.readLine();

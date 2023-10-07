@@ -37,8 +37,7 @@ public class Video extends Publication{
    
    public Video(BufferedReader br) throws IOException{
       super(br);
-      String buffer = br.readLine();
-      this.runtime = Duration.parse(br.readLine());
+      this.runtime = Duration.ofMinutes(Integer.valueOf(br.readLine()));
    }
    
    public void save(BufferedWriter bw) throws IOException{

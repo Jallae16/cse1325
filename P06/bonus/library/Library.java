@@ -39,8 +39,8 @@ public class Library{
 	      String buff = br.readLine();
 	      if(buff.equals("publication"))
 	      	 this.publications.add(new Publication(br));
-	      //else if(buff.equals("video"));
-	         //this.publications.add(new Video(br));
+	      else if(buff.equals("video"))
+	         this.publications.add(new Video(br));
 	      pubSize--;
 	   }
 	   int patSize = Integer.parseInt(br.readLine());
