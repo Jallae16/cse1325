@@ -56,14 +56,6 @@ public class Library{
 	   int patSize = patrons.size();
 	   bw.write("" + name + '\n');
 	   bw.write("" + pubSize + '\n');
-	   /*for(int i = 0; i < pubSize; i++){
-	      bw.write(publications.get(i).importantInfo());
-	   }
-	   bw.write("" + patSize + '\n');
-	   for(int i = 0; i < patSize; i++){
-	      bw.write(patrons.get(i).importantInfo());
-	   }*/
-	   
 	   for(Publication p : publications){
 	      p.save(bw);
 	   }

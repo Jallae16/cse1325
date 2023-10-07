@@ -45,12 +45,6 @@ public class Video extends Publication{
       super.save(bw);
       bw.write("" + runtime.toMinutes() + '\n');
    }
-   
-   @Override
-   public String importantInfo(){
-      return "" + runtime.toMinutes() + "\n" + super.importantInfo();
-   }
-   
    /**
 	  *
 	  * Returns information about the video

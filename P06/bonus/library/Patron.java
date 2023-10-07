@@ -49,9 +49,6 @@ public class Patron{
 	  * @since     1.0
 	  *
 	  */
-	public String importantInfo(){
-	   return name + "\n" + email + "\n";
-	}
 	@Override
 	public String toString(){
 	   return name + " (" + email + ")";

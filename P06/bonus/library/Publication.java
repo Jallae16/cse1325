@@ -107,11 +107,6 @@ public class Publication{
       	bw.write("" + dueDate + '\n');
       }
    }
-   public String importantInfo(){
-      if(loanedTo != null)
-         return "checked out\n" + dueDate + "\n" + title + "\n" + author + "\n" + copyright + "\n";
-      return title + "\n" + author + "\n" + copyright + "\n";
-   }
    
    @Override
    public String toString(){
