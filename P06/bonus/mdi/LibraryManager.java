@@ -67,7 +67,6 @@ public class LibraryManager {
         library.addPatron(new Patron(name, email));
     }
     public void openLibrary(){
-    	Library openingLibrary = null;
     	String fileName = console.readLine("File: "); 
     	if(fileName.isEmpty())
     		return;
@@ -77,7 +76,6 @@ public class LibraryManager {
     	catch(Exception e){
     		System.err.println("Failed to read: " + e);
     	}
-    	System.out.println(library);
     }	
     public void saveLibrary(){
     	String fileName = console.readLine("File: "); 

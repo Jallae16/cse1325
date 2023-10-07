@@ -4,7 +4,8 @@ The Cat in the Hat
 Dr. Suess
 1957
 checked out
-Joan of Arc (heroine@france.gov)
+Joan of Arc
+heroine@france.gov
 2023-10-20
 The Firm
 John Grisham
@@ -18,17 +19,6 @@ Citizen Kane
 Orson Welles
 1941
 checked in
-119
-Star Wars
-George Lucas
-1977
-checked in
-121
-七人の侍 (Seven Samurai)
-Akira Kurosawa
-1954
-checked in
-207
 9
 Prof Rice
 george.rice@uta.edu

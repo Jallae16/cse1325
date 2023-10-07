@@ -34,15 +34,19 @@ public class Library{
 	public Library(BufferedReader br) throws IOException{
 	   this.name = br.readLine();	   
 	   int pubSize = Integer.parseInt(br.readLine());
-	   while(pubSize-- > 0){
-	      if(br.readLine() == "runtime")
-	         this.publications.add(new Video(br));
-	      else
-	      	this.publications.add(new Publication(br));
+	   
+	   while(pubSize > 0){
+	      String buff = br.readLine();
+	      if(buff.equals("publication"))
+	      	 this.publications.add(new Publication(br));
+	      //else if(buff.equals("video"));
+	         //this.publications.add(new Video(br));
+	      pubSize--;
 	   }
 	   int patSize = Integer.parseInt(br.readLine());
-	   while(patSize-- > 0){
+	   while(patSize > 0){
 	      this.patrons.add(new Patron(br));
+	      patSize--;
 	   }
 	   
 	}
@@ -125,6 +129,8 @@ public class Library{
 	  */
 	
 	public String patronMenu(){
+	   if(patrons == null)
+	      return "";
 	   StringBuilder patMenu = new StringBuilder();
 	   patMenu.append("\nPatrons:");
 	   for(int i = 0; i < patrons.size(); i++){

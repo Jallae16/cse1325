@@ -77,17 +77,20 @@ public class Publication{
       this.title = br.readLine();
       this.author = br.readLine();
       this.copyright = Integer.parseInt(br.readLine());
-      if(br.readLine().equals("checked in")){
+      String line = br.readLine();
+      if(line.equals("checked in")){
          this.dueDate = null;
          this.loanedTo = null;
       }
-      else if(br.readLine().equals("checked out")){
-         //this.loanedTo = br.readLine();
+      else if(line.equals("checked out")){
+      	 String name = br.readLine();
+      	 String email = br.readLine();
+         this.loanedTo = new Patron(name, email);
          this.dueDate = LocalDate.parse(br.readLine());
       }
    }   
    public void save(BufferedWriter bw) throws IOException{
-      
+      bw.write("publication" + '\n');
       bw.write(title + '\n');
       bw.write(author + '\n');
       bw.write("" + copyright + '\n');
@@ -96,7 +99,7 @@ public class Publication{
       }
       else if(loanedTo != null){
       	bw.write("checked out" + '\n');
-      	bw.write("" + loanedTo + '\n');
+      	loanedTo.save(bw);
       	bw.write("" + dueDate + '\n');
       }
    }
