@@ -3,12 +3,12 @@ FULL CREDIT
 
 QUESTION 1: Why is String[] args changed to a LinkedList in WordSearch.main? (Hint: Examine the WordSearch constructor!)
 
-
+Because a linkedlist is the paramater for the WordSearch Constructor
 
 
 QUESTION 2: How many puzzles did your machine need to solve with 1 thread to run for between 30 and 45 seconds: 
 
-
+around 1100 puzzles
 
 
 QUESTION 3: Provide the output of 
@@ -43,7 +43,25 @@ sys	0m0.229s
 
 YOUR Timing:
 
+jallae@DESKTOP-HQO9I6D:/mnt/c/Users/Jacob Mathew/Downloads/cse1325-main/cse1325-main/P07/full_credit/baseline$ time java WordSearch 4 1000 ../puzzle??.txt
 
+1000 puzzles with 4 threads
+Thread 0: 0-249
+Thread 1: 250-499
+Thread 2: 500-749
+Thread 3: 750-999
+
+real    0m9.671s
+user    0m36.849s
+sys     0m0.572s
+jallae@DESKTOP-HQO9I6D:/mnt/c/Users/Jacob Mathew/Downloads/cse1325-main/cse1325-main/P07/full_credit/baseline$ time java WordSearch 1 1000 ../puzzle??.txt
+
+1000 puzzles with 1 threads
+Thread 0: 0-999
+
+real    0m28.928s
+user    0m29.337s
+sys     0m0.301s
 
 
 
@@ -51,7 +69,7 @@ YOUR Timing:
 
 QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program even slightly?  Why or why not?
 
-
+At first it does, but after some time it slows down. This is because there is only a limited amount of cores, so there is a max speed and a max amount of threads it can actually do efficantly. 
 
 
 
@@ -59,7 +77,7 @@ QUESTION 3: Does adding more threads continue to speed up the program? Do more t
 QUESTION 4: Does adding more threads increase the "system load" (sys), or is it constant regardless of the number of threads?  Why?
 
 
-
+Well, it can if you are using the threads efficantly and for an actual purpose. Too many threads without a purpose or benefit can be harmful.
 
 
 
