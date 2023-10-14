@@ -77,11 +77,30 @@ public class WordSearch {
         System.err.println ("\n" + NUM_PUZZLES + " puzzles with " 
             + NUM_THREADS + " threads"); // Show the # puzzles and threads
         // Solve all puzzles
+        for(int i = 0; i < NUM_THREADS; ++i){
+           final int threadID = i;
+           final int firstPuzzle = threadID * (NUM_PUZZLES/NUM_THREADS);
+           final int lastPuzzlePlusOne = (threadID + 1) * (NUM_PUZZLES/NUM_THREADS);
+           
+           Thread thread = new Thread(() -> solve(threadID, firstPuzzle, lastPuzzlePlusOne));
+           threads.add(thread);
+           thread.start();
+        }
+        
+        for(Thread thread : threads){
+           try{
+              thread.join();
+           }
+           catch(Exception e){
+              System.err.println(e);
+           }
+        }
         solve(0, 0, NUM_PUZZLES);
     }
 
     public void solve(int threadID, int firstPuzzle, int lastPuzzlePlusOne) {
         System.err.println("Thread " + threadID + ": " + firstPuzzle + "-" + (lastPuzzlePlusOne-1));
+        
         for(int i=firstPuzzle; i<lastPuzzlePlusOne; ++i) {
             Puzzle p = puzzles.get(i);
             Solver solver = new Solver(p);
@@ -115,4 +134,5 @@ public class WordSearch {
 
     private List<Puzzle> puzzles = new ArrayList<>();;
     private List<Solution> solutions = new ArrayList<>();
+    private List<Thread> threads = new ArrayList<>();
 }
