@@ -3,12 +3,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.HashSet;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class WordSearch {
+public class WordSearch{
     private static final String usage = "usage: java WordSearch [-h] [-v] [#threads] [#puzzles] [puzzleFile]...";
 
     public WordSearch(List<String> args) {
@@ -95,15 +96,22 @@ public class WordSearch {
               System.err.println(e);
            }
         }
-        solve(0, 0, NUM_PUZZLES);
     }
 
     public void solve(int threadID, int firstPuzzle, int lastPuzzlePlusOne) {
         System.err.println("Thread " + threadID + ": " + firstPuzzle + "-" + (lastPuzzlePlusOne-1));
         
         for(int i=firstPuzzle; i<lastPuzzlePlusOne; ++i) {
-            Puzzle p = puzzles.get(i);
-            Solver solver = new Solver(p);
+            Puzzle p;
+            synchronized(puzzles){
+               p = puzzles.get(i);
+            }
+            Solver solver;
+            synchronized(solutions){
+                solver = new Solver(p);
+            }
+            
+            
             for(String word : p.getWords()) {
                 try {
                     Solution s = solver.solve(word);
