@@ -1,12 +1,12 @@
+#include "Rectangle.h"
 #include <iostream>
 #include <string>
 #include <vector>
-#include <math>
 
-class Rectange{
+class Rectange : public Shape{
    public:
-      
-   protected:
-      double _height;
-      double _width;
+      Rectangle(double height, double width)
+         : _height(height), _width(width){}
+      double area() override {return _height * _width;}
+      std::string name() override {return "Rectangle";}
 }
