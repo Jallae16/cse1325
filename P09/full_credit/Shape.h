@@ -1,5 +1,6 @@
 #define _USE_MATH_DEFINES
 
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -10,5 +11,5 @@ class Shape{
       virtual std::string name();
       virtual double area();
       std::string to_string();
-}
+};
 

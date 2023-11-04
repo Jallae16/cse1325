@@ -1,8 +1,9 @@
+
 #include <iostream>
 #include <string>
 #include <vector>
 
-class Rectange : public Shape{
+class Rectangle : public Shape{
    public:
       Rectangle(double height, double width);
       double area();
@@ -10,4 +11,4 @@ class Rectange : public Shape{
    private:
       double _height;
       double _width;
-}
+};

@@ -1,5 +1,6 @@
 #define _USE_MATH_DEFINES
 
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,7 +10,7 @@ class Circle : public Shape{
 	public:
 	   Circle(double radius);
 	   double area();
-	   double name();
+	   std::string name();
 	private:
 	   double _radius;
-}
+};
