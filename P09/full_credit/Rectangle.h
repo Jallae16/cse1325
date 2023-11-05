@@ -1,3 +1,6 @@
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+
 #include "Shape.h"
 #include <iostream>
 #include <string>
@@ -12,3 +15,5 @@ class Rectangle : public Shape{
       double _height;
       double _width;
 };
+
+#endif

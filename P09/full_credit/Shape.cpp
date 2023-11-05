@@ -6,8 +6,10 @@
 #include <vector>
 #include <cmath>
 
-std::string name() {return "Shape";}
-double area(){return 0.0;}
-std::string to_string(){return std::string(name()) + " with area";}
+std::string Shape::name() {return "Shape";}
+double Shape::area(){return 0.0;}
+std::string Shape::to_string(){
+	return std::string(name()) + " with area " + std::to_string(area());
+}
 
 

@@ -1,3 +1,6 @@
+#ifndef SHAPE_H
+#define SHAPE_H
+
 #define _USE_MATH_DEFINES
 
 
@@ -13,3 +16,4 @@ class Shape{
       std::string to_string();
 };
 
+#endif

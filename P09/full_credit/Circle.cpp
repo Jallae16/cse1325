@@ -9,5 +9,5 @@
 Circle::Circle(double radius)
 	: _radius{radius} { }
 double Circle::area() {return M_PI * _radius * _radius;}
-std::string Circle::name() {return "Circle";}
+std::string Circle::name() {return "Circle with radius of " + std::to_string(_radius);}
 
