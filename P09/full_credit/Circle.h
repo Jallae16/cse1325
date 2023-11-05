@@ -1,16 +1,16 @@
 #define _USE_MATH_DEFINES
 
-
+#include "Shape.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <cmath>
 
-class Circle : public Shape{
+class Circle : public Shape {
 	public:
 	   Circle(double radius);
-	   double area();
-	   std::string name();
+	   double area() override;
+	   std::string name() override;
 	private:
 	   double _radius;
 };
