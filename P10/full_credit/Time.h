@@ -14,7 +14,7 @@ class Time{
 		
 		Time operator+(Time time);
 		Time& operator++();
-		Time operator++(int n);
+		Time operator++(int);
 		
 		inline bool operator==(const Time& time){return (compare(time) == 0);}
 		inline bool operator!=(const Time& time){return (compare(time) != 0);}
@@ -26,8 +26,8 @@ class Time{
 		int _hour;
 		int _minute;
 		int _second;
-		void rationalize()
-		int compare(const Time& time);
+		void rationalize();
+		int compare(const Time& time)const;
 };
 
 #endif
