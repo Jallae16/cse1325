@@ -1,14 +1,21 @@
 #ifndef __INDEX_H
 #define __INDEX_H
 
+//#include "Location.h"
 #include <iostream>
 #include <string>
 #include <map>
+#include <set>
+
+typedef std::string Word;
+typedef std::set<Location> Locations;
 
 class Index{
 	public:
-		void add_word(Word word, string filename, int line);
+		void add_word(Word word, std::string filename, int line);
 		friend std::ostream& operator<<(std::ostream& ost, const Index& index);
 	private:
-		map<Word, Locations> _index;
-}
+		std::map<Word, Locations> _index;
+};
+
+#endif
