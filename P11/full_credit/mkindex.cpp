@@ -1,8 +1,10 @@
 #include <iostream>
-#include <string>
 #include <map>
 #include <set>
+#include <string>
+#include "Index.h"
 
-int main(){
-	return 0;
+int main(int argc, char* argv[]) {
+
+    return 0;
 }

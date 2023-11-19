@@ -1,25 +1,29 @@
 #include "Index.h"
-
-#include <iostream>
-#include <string>
 #include <map>
 #include <set>
+#include <string>
+#include <vector>
+#include <iostream>
 
-
-void Index::add_word(Word word, std::string filename, int line){
-	if(_index.find(word) == _index.end()) return;
+void Index::add_word(const Word& word, const std::string& filename, int line){
+	Location loc(filename, line);
 	
-	Location loc{filename, line};
-	Locations.insert(loc);
-	//_index.insert({word, Locations.begin()});
+	_index[word].insert(loc);
 }
 
-std::ostream& operator<<(std::ostream& ost, const Index& index){
-	for(auto& [Word, Locations] : _index)
-		ost << " " << Word << ":";
-	for(std::set<Locations>::iterator i = Locations.begin();
-	    i != Locations.end(); ++i){
-	    	ost << *i << ", ";
-	    }
-	return ost;  
+std::ostream& operator<<(std::ostream& ost, const Index& index) {
+    std::cout << "Index\n=====\n\n" << std::endl;
+    
+    for(auto &i : Index._index){
+    	const Word &word = i.first;
+    	const Locations &locations = i.second;
+    	
+    	ost << " " << word << ":";
+    	for(auto l = locations.begin(); l != locations.end(); ++l){
+    		ost << *l;
+    		if(l != locations.end())
+    			ost << ", ";
+    	}
+    }
+    return ost;
 }
