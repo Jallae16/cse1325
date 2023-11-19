@@ -3,25 +3,23 @@
 
 #include <iostream>
 #include <string>
-#include <iomanip>
 
 class Location{
 	public:
 		Location(std::string filename, int line);
 		
-		inline bool operator==(const Location& location){ return compare(location) == 0;}
-		inline bool operator!=(const Location& location){ return compare(location) != 0;}
-		inline bool operator< (const Location& location){ return compare(location) <  0;}
-		inline bool operator> (const Location& location){ return compare(location) >  0;}
-		inline bool operator<=(const Location& location){ return compare(location) <= 0;}
-		inline bool operator>=(const Location& location){ return compare(location) >= 0;}
+		inline bool operator==(const Location& location)const;
+		inline bool operator!=(const Location& location)const;
+		inline bool operator< (const Location& location)const;
+		inline bool operator> (const Location& location)const;
+		inline bool operator<=(const Location& location)const;
+		inline bool operator>=(const Location& location)const;
 		
 		friend std::ostream& operator<<(std::ostream& ost, const Location& location);
 		
 	private:
 		std::string _filename;
 		int _line;
-		int compare(Location location);
 };
 
 #endif
